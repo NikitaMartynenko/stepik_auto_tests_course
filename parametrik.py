@@ -25,8 +25,6 @@ def browser():
                                   "https://stepik.org/lesson/236904/step/1",
                                   "https://stepik.org/lesson/236905/step/1"])
 
-#@pytest.mark.parametrize('link', ["https://stepik.org/lesson/236895/step/1"])
-
 def test_guest_should_see_login_link(browser, link):
 
     browser.get(link)
@@ -66,14 +64,6 @@ def test_guest_should_see_login_link(browser, link):
         but2 = browser.find_element(By.CSS_SELECTOR, ".submit-submission")
         but2.click()
 
-    #finally:
-    #    time.sleep(2)
-    #    but = browser.find_element(By.CSS_SELECTOR, ".submit-submission")
-    #    but.click()
-    #    time.sleep(1)
-    #    feedback = browser.find_element(By.CSS_SELECTOR, "p.smart-hints__hint")
-    #    print(f'feedback = = {feedback.text}')
-    #    assert feedback.text == "Correct!", f"expected 'Correct!', got {feedback.text}"
     feedback = browser.find_element(By.CSS_SELECTOR, "p.smart-hints__hint")
     print(f'feedback = = {feedback.text}')
     assert feedback.text == "Correct!", f"expected 'Correct!', got {feedback.text}"
